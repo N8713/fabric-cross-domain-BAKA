@@ -1,0 +1,10 @@
+node_modules/
+organizations/
+wallet/
+crypto-config/
+channel-artifacts/
+*.pem
+*_sk
+connection-org*.json
+results.csv
+.DS_Store
