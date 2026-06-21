@@ -12,20 +12,16 @@ const chaincodeName = 'iotcc';
 const testNetworkPath = path.resolve(__dirname, '../test-network');
 const resultsPath = path.resolve(__dirname, 'revocation_delay_results.csv');
 
-// 测试场景：0 表示空载；8 和 16 表示并发 QueryDevices 背景负载
 const loadLevels = [0, 8, 16];
 
-// 背景查询使用的批量规模。
-// 这里取 200，是为了模拟较重的并发批量查询负载。
 const backgroundBatchSize = 200;
 
-// Org2 查询 revoked 状态的轮询间隔
+
 const pollIntervalMs = 20;
 
-// 单次撤销观察最大等待时间
 const observeTimeoutMs = 15000;
 
-// 背景查询轮之间是否休息。0 表示尽可能连续施压。
+
 const backgroundQuerySleepMs = 0;
 
 function orgConfig(org) {
