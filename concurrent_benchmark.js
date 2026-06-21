@@ -12,14 +12,13 @@ const chaincodeName = 'iotcc';
 const testNetworkPath = path.resolve(__dirname, '../test-network');
 const resultsPath = path.resolve(__dirname, 'concurrent_results.csv');
 
-// 并发梯度：用于回应审稿人关于 simultaneous batch arrivals 的意见
+
 const concurrencyLevels = [1, 2, 4, 8, 16, 32];
 
-// 每个 n 和并发数 c 下重复多少轮。
-// 20 轮比较稳妥；如果想先快速试跑，可临时改成 3 或 5。
+
 const roundsPerSetting = 20;
 
-// 每组测试之间短暂间隔，避免连续压测造成极端抖动
+
 const sleepBetweenRoundsMs = 200;
 
 function orgConfig(org) {
